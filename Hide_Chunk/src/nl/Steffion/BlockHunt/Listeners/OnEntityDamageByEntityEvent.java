@@ -16,6 +16,10 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
+import com.earth2me.essentials.api.Economy;
+import com.earth2me.essentials.api.NoLoanPermittedException;
+import com.earth2me.essentials.api.UserDoesNotExistException;
+
 public class OnEntityDamageByEntityEvent implements Listener {
 
 	@SuppressWarnings("deprecation")
@@ -59,39 +63,33 @@ public class OnEntityDamageByEntityEvent implements Listener {
 								W.pBlock.remove(player);
 
 								if (!arena.seekers.contains(player)) {
-									if (W.shop.getFile().get(
-											damager.getName() + ".tokens") == null) {
-										W.shop.getFile().set(
-												damager.getName() + ".tokens",
-												0);
-										W.shop.save();
+									
+
+									try {
+										Economy.add(damager.getName(), arena.killTokens);
+									} catch (UserDoesNotExistException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (NoLoanPermittedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
 									}
-									int damagerTokens = W.shop.getFile()
-											.getInt(damager.getName()
-													+ ".tokens");
-									W.shop.getFile().set(
-											damager.getName() + ".tokens",
-											damagerTokens + arena.killTokens);
-									W.shop.save();
 
 									MessageM.sendFMessage(damager,
 											ConfigC.normal_addedToken,
 											"amount-" + arena.killTokens);
 
-									if (W.shop.getFile().get(
-											player.getName() + ".tokens") == null) {
-										W.shop.getFile()
-												.set(player.getName()
-														+ ".tokens", 0);
-										W.shop.save();
-									}
-									int playerTokens = W.shop.getFile().getInt(
-											player.getName() + ".tokens");
+									
 									float addingTokens = ((float) arena.hidersTokenWin - (((float) arena.timer / (float) arena.gameTime) * (float) arena.hidersTokenWin));
-									W.shop.getFile().set(
-											player.getName() + ".tokens",
-											playerTokens + (int) addingTokens);
-									W.shop.save();
+									try {
+										Economy.add(player.getName(), (int) addingTokens);
+									} catch (UserDoesNotExistException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (NoLoanPermittedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
 									MessageM.sendFMessage(player,
 											ConfigC.normal_addedToken,

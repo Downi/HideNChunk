@@ -21,7 +21,6 @@ import nl.Steffion.BlockHunt.Commands.CMDset;
 import nl.Steffion.BlockHunt.Commands.CMDsetwarp;
 import nl.Steffion.BlockHunt.Commands.CMDshop;
 import nl.Steffion.BlockHunt.Commands.CMDstart;
-import nl.Steffion.BlockHunt.Commands.CMDtokens;
 import nl.Steffion.BlockHunt.Commands.CMDwand;
 import nl.Steffion.BlockHunt.Listeners.OnBlockBreakEvent;
 import nl.Steffion.BlockHunt.Listeners.OnBlockPlaceEvent;
@@ -95,7 +94,6 @@ public class BlockHunt extends JavaPlugin implements Listener {
 			add("set");
 			add("setwarp");
 			add("remove");
-			add("tokens");
 		}
 	};
 
@@ -156,72 +154,67 @@ public class BlockHunt extends JavaPlugin implements Listener {
 
 		ConfigM.newFiles();
 
-		CMD = new CommandM("BlockHunt", "BlockHunt", null, null,
+		CMD = new CommandM("HideNChunk", "HideNChunk", null, null,
 				Permissions.info, ConfigC.help_info,
 				(Boolean) W.config.get(ConfigC.commandEnabled_info),
 				BlockHuntCMD, new CMDinfo(), null);
-		CMDinfo = new CommandM("BlockHunt INFO", "BlockHunt", "info", "i",
+		CMDinfo = new CommandM("HideNChunk INFO", "HideNChunk", "info", "i",
 				Permissions.info, ConfigC.help_info,
 				(Boolean) W.config.get(ConfigC.commandEnabled_info),
-				BlockHuntCMD, new CMDinfo(), "/BlockHunt [info|i]");
-		CMDhelp = new CommandM("BlockHunt HELP", "BlockHunt", "help", "h",
+				BlockHuntCMD, new CMDinfo(), "/HideNChunk [info|i]");
+		CMDhelp = new CommandM("HideNChunk HELP", "HideNChunk", "help", "h",
 				Permissions.help, ConfigC.help_help,
 				(Boolean) W.config.get(ConfigC.commandEnabled_help),
 				BlockHuntCMD, new CMDhelp(),
-				"/BlockHunt <help|h> [page number]");
-		CMDreload = new CommandM("BlockHunt RELOAD", "BlockHunt", "reload",
+				"/HideNChunk <help|h> [page number]");
+		CMDreload = new CommandM("HideNChunk RELOAD", "HideNChunk", "reload",
 				"r", Permissions.reload, ConfigC.help_reload,
 				(Boolean) W.config.get(ConfigC.commandEnabled_reload),
-				BlockHuntCMD, new CMDreload(), "/BlockHunt <reload|r>");
-		CMDjoin = new CommandM("BlockHunt JOIN", "BlockHunt", "join", "j",
+				BlockHuntCMD, new CMDreload(), "/HideNChunk <reload|r>");
+		CMDjoin = new CommandM("HideNChunk JOIN", "HideNChunk", "join", "j",
 				Permissions.join, ConfigC.help_join,
 				(Boolean) W.config.get(ConfigC.commandEnabled_join),
-				BlockHuntCMD, new CMDjoin(), "/BlockHunt <join|j> <arenaname>");
-		CMDleave = new CommandM("BlockHunt LEAVE", "BlockHunt", "leave", "l",
+				BlockHuntCMD, new CMDjoin(), "/HideNChunk <join|j> <arenaname>");
+		CMDleave = new CommandM("HideNChunk LEAVE", "HideNChunk", "leave", "l",
 				Permissions.leave, ConfigC.help_leave,
 				(Boolean) W.config.get(ConfigC.commandEnabled_leave),
-				BlockHuntCMD, new CMDleave(), "/BlockHunt <leave|l>");
-		CMDlist = new CommandM("BlockHunt LIST", "BlockHunt", "list", "li",
+				BlockHuntCMD, new CMDleave(), "/HideNChunk <leave|l>");
+		CMDlist = new CommandM("HideNChunk LIST", "HideNChunk", "list", "li",
 				Permissions.list, ConfigC.help_list,
 				(Boolean) W.config.get(ConfigC.commandEnabled_list),
-				BlockHuntCMD, new CMDlist(), "/BlockHunt <list|li>");
-		CMDshop = new CommandM("BlockHunt SHOP", "BlockHunt", "shop", "sh",
+				BlockHuntCMD, new CMDlist(), "/HideNChunk <list|li>");
+		CMDshop = new CommandM("HideNChunk SHOP", "HideNChunk", "shop", "sh",
 				Permissions.shop, ConfigC.help_shop,
 				(Boolean) W.config.get(ConfigC.commandEnabled_shop),
-				BlockHuntCMD, new CMDshop(), "/BlockHunt <shop|sh>");
-		CMDstart = new CommandM("BlockHunt START", "BlockHunt", "start", "go",
+				BlockHuntCMD, new CMDshop(), "/HideNChunk <shop|sh>");
+		CMDstart = new CommandM("HideNChunk START", "HideNChunk", "start", "go",
 				Permissions.start, ConfigC.help_start,
 				(Boolean) W.config.get(ConfigC.commandEnabled_start),
 				BlockHuntCMD, new CMDstart(),
-				"/BlockHunt <start|go> <arenaname>");
-		CMDwand = new CommandM("BlockHunt WAND", "BlockHunt", "wand", "w",
+				"/HideNChunk <start|go> <arenaname>");
+		CMDwand = new CommandM("HideNChunk WAND", "HideNChunk", "wand", "w",
 				Permissions.create, ConfigC.help_wand,
 				(Boolean) W.config.get(ConfigC.commandEnabled_wand),
 				BlockHuntCMD, new CMDwand(), "/BlockHunt <wand|w>");
-		CMDcreate = new CommandM("BlockHunt CREATE", "BlockHunt", "create",
+		CMDcreate = new CommandM("HideNChunk CREATE", "HideNChunk", "create",
 				"c", Permissions.create, ConfigC.help_create,
 				(Boolean) W.config.get(ConfigC.commandEnabled_create),
 				BlockHuntCMD, new CMDcreate(),
-				"/BlockHunt <create|c> <arenaname>");
-		CMDset = new CommandM("BlockHunt SET", "BlockHunt", "set", "s",
+				"/HideNChunk <create|c> <arenaname>");
+		CMDset = new CommandM("HideNChunk SET", "HideNChunk", "set", "s",
 				Permissions.set, ConfigC.help_set,
 				(Boolean) W.config.get(ConfigC.commandEnabled_set),
-				BlockHuntCMD, new CMDset(), "/BlockHunt <set|s> <arenaname>");
-		CMDsetwarp = new CommandM("BlockHunt SETWARP", "BlockHunt", "setwarp",
+				BlockHuntCMD, new CMDset(), "/HideNChunk <set|s> <arenaname>");
+		CMDsetwarp = new CommandM("HideNChunk SETWARP", "HideNChunk", "setwarp",
 				"sw", Permissions.setwarp, ConfigC.help_setwarp,
 				(Boolean) W.config.get(ConfigC.commandEnabled_setwarp),
 				BlockHuntCMD, new CMDsetwarp(),
-				"/BlockHunt <setwarp|sw> <lobby|hiders|seekers|spawn> <arenaname>");
-		CMDremove = new CommandM("BlockHunt REMOVE", "BlockHunt", "remove",
+				"/HideNChunk <setwarp|sw> <lobby|hiders|seekers|spawn> <arenaname>");
+		CMDremove = new CommandM("HideNChunk REMOVE", "HideNChunk", "remove",
 				"delete", Permissions.remove, ConfigC.help_remove,
 				(Boolean) W.config.get(ConfigC.commandEnabled_remove),
 				BlockHuntCMD, new CMDremove(),
-				"/BlockHunt <remove|delete> <arenaname>");
-		CMDtokens = new CommandM("BlockHunt TOKENS", "BlockHunt", "tokens",
-				"t", Permissions.tokens, ConfigC.help_tokens,
-				(Boolean) W.config.get(ConfigC.commandEnabled_tokens),
-				BlockHuntCMD, new CMDtokens(),
-				"/BlockHunt <tokens|t> <set|add|take> <playername> <amount>");
+				"/HideNChunk <remove|delete> <arenaname>");
 
 		if (!getServer().getPluginManager().isPluginEnabled("LibsDisguises")) {
 			MessageM.broadcastFMessage(ConfigC.error_libsDisguisesNotInstalled);

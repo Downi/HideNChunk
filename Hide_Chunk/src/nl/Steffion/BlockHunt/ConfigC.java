@@ -15,7 +15,7 @@ public enum ConfigC {
 	 * @author Steffion
 	 */
 
-	chat_tag ("[" + BlockHunt.pdfFile.getName() + "] ", W.config),
+	chat_tag ("[HideNChunk] ", W.config),
 	chat_normal ("&b", W.config),
 	chat_warning ("&c", W.config),
 	chat_error ("&c", W.config),
