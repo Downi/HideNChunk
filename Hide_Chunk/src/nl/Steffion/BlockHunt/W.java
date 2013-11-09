@@ -38,7 +38,6 @@ public class W {
 	public static ConfigM messages = new ConfigM("messages");
 	public static ConfigM arenas = new ConfigM("arenas");
 	public static ConfigM signs = new ConfigM("signs");
-	public static ConfigM shop = new ConfigM("shop");
 	public static ConfigM player = new ConfigM("player");
 
 	/*

@@ -157,14 +157,7 @@ public class ArenaHandler {
 
 									if ((Boolean) W.config
 											.get(ConfigC.shop_blockChooserv1Enabled) == true) {
-										if (W.shop.getFile().get(
-												player.getName()
-														+ ".blockchooser") != null
-												|| PermissionsM
-														.hasPerm(
-																player,
-																Permissions.shopblockchooser,
-																false)) {
+										
 											ItemStack shopBlockChooser = new ItemStack(
 													Material.getMaterial((String) W.config
 															.get(ConfigC.shop_blockChooserv1IDname)),
@@ -190,7 +183,6 @@ public class ArenaHandler {
 
 											player.getInventory().addItem(
 													shopBlockChooser);
-										}
 									}
 									
 
@@ -223,46 +215,6 @@ public class ArenaHandler {
 													shopBlock);
 									}
 
-									if ((Boolean) W.config
-											.get(ConfigC.shop_BlockHuntPassv2Enabled) == true) {
-										if (W.shop.getFile().getInt(
-												player.getName()
-														+ ".blockhuntpass") != 0) {
-											ItemStack shopBlockHuntPass = new ItemStack(
-													Material.getMaterial((String) W.config
-															.get(ConfigC.shop_BlockHuntPassv2IDName)),
-													1);
-											ItemMeta shopBlockHuntPass_IM = shopBlockHuntPass
-													.getItemMeta();
-											shopBlockHuntPass_IM
-													.setDisplayName(MessageM
-															.replaceAll((String) W.config
-																	.get(ConfigC.shop_BlockHuntPassv2Name)));
-											List<String> lores = W.config
-													.getFile()
-													.getStringList(
-															ConfigC.shop_BlockHuntPassv2Description.location);
-											List<String> lores2 = new ArrayList<String>();
-											for (String lore : lores) {
-												lores2.add(MessageM
-														.replaceAll(lore));
-											}
-
-											shopBlockHuntPass_IM
-													.setLore(lores2);
-											shopBlockHuntPass
-													.setItemMeta(shopBlockHuntPass_IM);
-											shopBlockHuntPass
-													.setAmount(W.shop
-															.getFile()
-															.getInt(player
-																	.getName()
-																	+ ".blockhuntpass"));
-
-											player.getInventory().addItem(
-													shopBlockHuntPass);
-										}
-									}
 									player.updateInventory();
 
 									DisguiseAPI.undisguiseToAll(player);

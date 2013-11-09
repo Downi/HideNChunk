@@ -111,7 +111,6 @@ public class BlockHunt extends JavaPlugin implements Listener {
 	public static CommandM CMDset;
 	public static CommandM CMDsetwarp;
 	public static CommandM CMDremove;
-	public static CommandM CMDtokens;
 
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);

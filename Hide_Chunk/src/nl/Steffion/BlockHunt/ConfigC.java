@@ -208,7 +208,7 @@ public enum ConfigC {
 	error_commandNotEnabled ("%TAG%EThis command has been disabled!",
 			W.messages),
 	error_commandNotFound ("%TAG%ECouldn't find the command. Try %A/"
-			+ BlockHunt.pdfFile.getName() + " help %Efor more info.",
+			+ "HideNChunk" + " help %Efor more info.",
 			W.messages),
 	error_notEnoughArguments ("%TAG%EYou're missing arguments, correct syntax: %A%syntax%",
 			W.messages),

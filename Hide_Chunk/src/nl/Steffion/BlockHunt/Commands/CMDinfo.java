@@ -26,7 +26,7 @@ public class CMDinfo extends DefaultCMD {
 		MessageM.sendFMessage(player, ConfigC.chat_headerhigh, "header-"
 				+ BlockHunt.pdfFile.getName());
 		MessageM.sendMessage(player, "%A%name%%N made by %A%autors%%N.",
-				"name-" + BlockHunt.pdfFile.getName(), "autors-"
+				"name-" + "BlockHunt", "autors-"
 						+ BlockHunt.pdfFile.getAuthors().get(0));
 		MessageM.sendMessage(player, "%NModified by %A%autors%%N.",
 				"name-" + BlockHunt.pdfFile.getName(), "autors-"
@@ -37,8 +37,6 @@ public class CMDinfo extends DefaultCMD {
 				+ "0.1");
 		MessageM.sendMessage(player, "%NType %A%helpusage% %Nfor help.",
 				"helpusage-" + BlockHunt.CMDhelp.usage);
-		MessageM.sendMessage(player,
-				"%NDev-Page: %Ahttp://dev.bukkit.org/bukkit-plugins/blockhunt/");
 		MessageM.sendFMessage(player, ConfigC.chat_headerhigh,
 				"header-&oInfo Page");
 		return true;

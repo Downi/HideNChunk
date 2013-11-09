@@ -103,6 +103,9 @@ public class OnInventoryClickEvent implements Listener {
 					if (item == null) {
 						return;
 					}
+					if (item.getType() == Material.AIR) {
+						return;
+					}
 					String blockprice = item.getItemMeta().getLore().get(0).replaceAll(
 							MessageM.replaceAll("%NPrice: %A"),
 							"");
