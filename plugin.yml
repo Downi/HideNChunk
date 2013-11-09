@@ -1,0 +1,26 @@
+name: HideNChunk
+main: nl.Steffion.BlockHunt.BlockHunt
+version: 0.2.0_BETA_B3
+authors:
+  - Steffion
+  - Daunilein
+description: An easy to set up, Hide and seek plugin. Hide as blocks from the killer seekers.
+softdepend: [LibsDisguises, ProtocolLib, Multiverse-Core, My Worlds, Essentials]
+load: POSTWORLD
+commands:
+  HideNChunk:
+    usage: /<command>
+    description: N/A
+    aliases:
+        - bh
+        - prophunt
+        - ph
+        - hideandseek
+        - has
+        - hs
+        - seekandfind
+        - saf
+        - sf
+        - hc
+        - blockhunt
+        - hidechunk
